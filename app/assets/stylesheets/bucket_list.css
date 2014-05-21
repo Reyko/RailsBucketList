@@ -1,0 +1,16 @@
+#bucket-list {
+
+  padding: 2em;
+  margin: 2em;
+  background:#fff;
+  border:2px solid #2707BF;
+  box-shadow: 6px 8px 34px #272828;
+  color:#333;
+
+}
+
+#bucket-list h1{
+  font-size: 4em;
+  margin-bottom: 0.5em;
+
+}
