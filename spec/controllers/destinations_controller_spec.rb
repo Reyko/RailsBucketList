@@ -61,6 +61,43 @@ describe DestinationsController, :type => :controller do
 
   end
 
+
+# Run this with:
+# rspec  rspec spec/controllers/destinations_controller_spec.rb -e "GET to index"
+  describe "GET to show" do
+    before do
+      @destination = Destination.create(:name => Faker::Address.country)
+      get :show, :id => @destination.id
+    end
+
+    it "should display the show page" do
+      expect(assigns(:destination)).to eq(@destination)
+      expect(response).to render_template("show")
+    end
+  end
+
+
+
+
+  describe "GET to index" do
+    before do
+      get :index
+    end
+
+    it "should display the index page" do
+      expect(response).to render_template("index");
+    end
+
+    # it "should have some destinations" do
+    #   expect(response).to
+    # end
+
+  end
+
+
+
+
+
 end
 
 
