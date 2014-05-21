@@ -1,6 +1,11 @@
 class DestinationsController < ApplicationController
   before_filter :load_all_destinations, :only => :index
+  before_filter :create_a_new_destination, :only => :index
   before_filter :load_a_destination, :only => :show
+
+
+
+
 
 
   def create
@@ -27,6 +32,10 @@ class DestinationsController < ApplicationController
 
   def load_all_destinations
     @destinations = Destination.all
+  end
+
+  def create_a_new_destination
+    @destination = Destination.new
   end
 
   def load_a_destination

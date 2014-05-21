@@ -12,14 +12,21 @@ h3{
   
   border:1px solid #000;
   width:600px;
-  padding:40px 40px 0px 40px;
-  margin-bottom:60px;
 
+  padding:40px 10px 0px 10px;
+  margin-bottom:60px;
+  -ms-transform: rotate(-4deg); /* IE 9 */
+  -webkit-transform: rotate(-4deg); /* Chrome, Safari, Opera */
+  transform: rotate(-4deg);
+
+  border-radius:2px;
+
+  text-align:center;
 }
 
 .destination-image{
   
-  width: 600px;
+  width:100%;
   height:400px;
 
 }
