@@ -7,16 +7,16 @@ end  -->
 
 <section id="bucket-list">
   <h1>Bucket List</h1>
+   <div id ="destinations">
     <%= render @destinations %>
-
-  <div class="add-destinatino">
+  </div>
+  <div class="add-destination">
     <%= link_to "Add Destination", "#" %>
   </div>
 
   <div class ="modal">
-    <%= form_for @destination do |f| %>
+    <%= form_for @destination, :remote => true do |f| %>
       
-
       <%= field_set_tag do%>
         <%= f.label :name %>
         <%= f.text_field :name %>

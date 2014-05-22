@@ -5,16 +5,19 @@ class DestinationsController < ApplicationController
 
 
 
-
-
-
   def create
     # binding.pry
 
      @destination = Destination.new(allowed_params)
      if @destination.save
        # flash[:notice] = "Record Saved"
-       redirect_to destination_path(@destination), :notice => "Record Saved"
+
+       respond_to do |format|
+        format.html { redirect_to destination_path(@destination), :notice => "Record Saved"}
+        format.js 
+       end
+
+       # redirect_to destination_path(@destination), :notice => "Record Saved"
      else
        render :new
      end
