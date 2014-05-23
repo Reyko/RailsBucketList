@@ -17,6 +17,11 @@
         <%= f.text_field :title %>
       <% end %>
 
+      <%= field_set_tag do %>
+        <%= f.label :destination_id, "Description"%>
+        <%= f.text_field :description %>
+      <% end %>
+
 
       <%= field_set_tag do %>
         <%= f.label :description, "Description"%>

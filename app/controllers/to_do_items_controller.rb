@@ -4,7 +4,10 @@ class ToDoItemsController < ApplicationController
 
   def create
     binding.pry
-    @destination = Destination.find(params[:id])
+    @to_do_item = ToDoItem.new(to_do_params)
+    
+
+    
 
     params = to_do_params << @destination
     @toDo = Destination.new(to_do_params)

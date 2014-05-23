@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
+gem 'geocoder'
 
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0.0.beta'
@@ -21,4 +22,5 @@ group :development, :test do
 	gem 'launchy'
   gem 'selenium-webdriver'
   gem 'rspec-expectations'
+
 end
