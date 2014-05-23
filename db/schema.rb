@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521130405) do
+ActiveRecord::Schema.define(version: 20140522190255) do
 
   create_table "destinations", force: true do |t|
     t.datetime "created_at"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140521130405) do
     t.integer  "destination_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
 end

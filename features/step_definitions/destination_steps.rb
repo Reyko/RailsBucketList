@@ -17,8 +17,7 @@ When(/^I submit the form$/) do
   click_on "Create Destination"
 end
 
-Then(/^I should see my new destination $/) do 
-
-  expect (page.has_content?(@country)).to be true
-  expect (page.has_css?("img.destination-image[src=http://placepuppy.it/300/300'")).to be true
+Then(/^I should see my new destination$/) do 
+  expect(page.has_content?(@country)).to be true
+  expect(page.has_css?('img.destination-image[src="http://placepuppy.it/300/300"]')).to be true
 end

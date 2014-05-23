@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   # resources :destinations, :only => [] do
   #   member do
   #     # TODO: Add routes in here that NEED to know the ID

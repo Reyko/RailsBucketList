@@ -5,6 +5,26 @@
 
       <h3><%= destination.name %></h3>
 
-  </div>
+
+      <h3>To Do Items</h3>
+
+  <div class = "to-do-item">
+    <%= link_to "Add To Do Item" %>
+    <%= form_for make_to_do_item, url: destination_to_do_items_path(destination) do |f| %>
+  
+      <%= field_set_tag do %>
+        <%= f.label :title, "Title" %>
+        <%= f.text_field :title %>
+      <% end %>
 
 
+      <%= field_set_tag do %>
+        <%= f.label :description, "Description"%>
+        <%= f.text_field :description %>
+      <% end %>
+      <%= f.submit "Add Item" %>
+
+    <% end %>
+  </div>  
+
+ </div>

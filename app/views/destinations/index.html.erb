@@ -10,9 +10,8 @@ end  -->
    <div id ="destinations">
     <%= render @destinations %>
   </div>
-  <div class="add-destination">
-    <%= link_to "Add Destination", "#" %>
-  </div>
+
+
 
   <div class ="modal">
     <%= form_for @destination, :remote => true do |f| %>

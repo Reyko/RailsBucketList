@@ -11,6 +11,7 @@ gem 'spring', group: :development
 
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0.0.beta'
+
 	gem 'shoulda-matchers'
 	gem 'faker'
 	gem 'pry-byebug'
@@ -18,4 +19,6 @@ group :development, :test do
 	gem 'cucumber-rails', :require => false
 	gem 'database_cleaner'
 	gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'rspec-expectations'
 end

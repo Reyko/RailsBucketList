@@ -1,22 +1,22 @@
 class DestinationsController < ApplicationController
   before_filter :load_all_destinations, :only => :index
   before_filter :create_a_new_destination, :only => :index
+  before_filter :create_a_new_to_do, :only => :index
   before_filter :load_a_destination, :only => :show
 
-
+  def index
+    # @to_do = ToDoItem.new()
+  end
 
   def create
     # binding.pry
-
      @destination = Destination.new(allowed_params)
      if @destination.save
        # flash[:notice] = "Record Saved"
-
        respond_to do |format|
         format.html { redirect_to destination_path(@destination), :notice => "Record Saved"}
         format.js 
        end
-
        # redirect_to destination_path(@destination), :notice => "Record Saved"
      else
        render :new
@@ -33,6 +33,10 @@ class DestinationsController < ApplicationController
     params.require(:destination).permit(:name, :image_url)
   end
 
+  def create_a_new_to_do
+    @toDo = ToDoItem.new
+  end
+
   def load_all_destinations
     @destinations = Destination.all
   end
@@ -44,5 +48,8 @@ class DestinationsController < ApplicationController
   def load_a_destination
     @destination = Destination.find(params[:id])
   end
+
+  
+ 
 
 end
