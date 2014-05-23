@@ -18,3 +18,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 font-family: Monano, Consolas, "Lucida Console", monospace;
 }
 
+.clear{
+  clear:both;
+}

@@ -6,28 +6,42 @@ end  -->
   <!-- Or -->
 
 <section id="bucket-list">
-  <h1>Bucket List</h1>
-   <div id ="destinations">
-    <%= render @destinations %>
-  </div>
+    <h1>Bucket List</h1>
+
+    <div class="des_wrapper">
+       <div id ="destinations">
+        <%= render @destinations %>
+      </div>
+  
 
 
+    <div class ="modal">
+      <%= form_for @destination, :remote => true do |f| %> 
+        <%= field_set_tag do%>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        <% end %>
 
-  <div class ="modal">
-    <%= form_for @destination, :remote => true do |f| %> 
-      <%= field_set_tag do%>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= field_set_tag do%>
+          <%= f.label :image_url ,"Image Url" %>
+          <%= f.text_field :image_url%>
+        <% end %>
+
+        <%= f.submit "Create Destination" %>
+
       <% end %>
-
-      <%= field_set_tag do%>
-        <%= f.label :image_url ,"Image Url" %>
-        <%= f.text_field :image_url%>
-      <% end %>
-
-      <%= f.submit "Create Destination" %>
-
-    <% end %>
+    </div>
   </div>
+     <section id="map-canvas">
+  </section>
 
+   </div> 
+
+ 
+<div class ="clear">
+</div>  
 </section>
+
+<!-- 
+<div class ="clear">
+</div> -->
