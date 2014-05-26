@@ -5,10 +5,10 @@ class ToDoItem < ActiveRecord::Base
   belongs_to :destination
 
   geocoded_by :geocoder_input
+
   after_validation :geocode
 
   def geocoder_input
     "#{location} #{destination.name}"
   end
-
 end

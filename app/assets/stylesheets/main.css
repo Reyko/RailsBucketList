@@ -21,3 +21,18 @@ font-family: Monano, Consolas, "Lucida Console", monospace;
 .clear{
   clear:both;
 }
+
+.hidden{
+
+  display:none;
+}
+
+label{
+display:block;
+
+
+} 
+
+input{
+
+}

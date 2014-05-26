@@ -1,36 +1,43 @@
   <div class ="destination">
-   
- 
-     <%= image_tag destination.image_url, :class => "destination-image" %>
 
+     <%= image_tag destination.image_url, :class => "destination-image" %>
+     <section class="map-canvas" id = "<%=destination.id %>">
+     </section>
       <h3><%= destination.name %></h3>
 
+      <p class = "hidden" id = "latitude <%= destination.id %>"><%= destination.latitude %></p>
+      <p class = "hidden" id = "longitude <%= destination.id %>"><%= destination.longitude %></p>
 
-      <h3>To Do Items</h3>
+  <h3>To Do Items</h3>
+
+  <div id="<%= to_do_item_id(destination) %>">
+    <!-- Put new to do items into this div -->
+      <%= render destination.to_do_items %>
+  </div>
 
   <div class = "to-do-item">
     <%= link_to "Add To Do Item" %>
-    <%= form_for make_to_do_item, url: destination_to_do_items_path(destination) do |f| %>
-  
+    <%= form_for make_to_do_item, url: destination_to_do_items_path(destination),:remote => true do |f| %>
+ 
       <%= field_set_tag do %>
         <%= f.label :title, "Title" %>
         <%= f.text_field :title %>
       <% end %>
 
-      
       <%= field_set_tag do %>
-        <%= f.label :description, "Description"%>
-        <%= f.text_field :description %>
+        <%= f.label :location, "Location" %>
+        <%= f.text_field :location %>
       <% end %>
-
-      <%= field_set_tag do %>
-        <%= f.label :destination_id, "Destination"%>
-        <%= f.text_field :destination %>
-      <% end %>
-
-      <%= f.submit "Add Item" %>
+    </div>
+      <%= f.hidden_field :destination_id, :value => destination.id %>
+      <%= f.submit "Add Item"%>
 
     <% end %>
-  </div>  
+
+
+
 
  </div>
+
+
+

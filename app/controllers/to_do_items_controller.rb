@@ -3,11 +3,9 @@ class ToDoItemsController < ApplicationController
   before_filter :to_do_params, :only => :destination_to_do_items
 
   def create
-    binding.pry
     @to_do_item = ToDoItem.new(to_do_params)
-    
-
-    @toDo.save!
+        # binding.pry
+    @to_do_item.save!
   end
 
   def show
@@ -30,7 +28,7 @@ class ToDoItemsController < ApplicationController
 
 
   def to_do_params
-    params.require(:to_do_items).permit(:destination_id,:title,:description)
+    params.require(:to_do_item).permit(:destination_id,:title,:location)
   end
 
 end
