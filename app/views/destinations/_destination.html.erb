@@ -1,12 +1,12 @@
   <div class ="destination">
 
      <%= image_tag destination.image_url, :class => "destination-image" %>
-     <section class="map-canvas" id = "<%=destination.id %>">
+     <section class="map-canvas" id = "<%=destination.id %>" data-latitude = "<%= destination.latitude %>" data-longitude = "<%= destination.longitude %>">
      </section>
       <h3><%= destination.name %></h3>
 
-      <p class = "hidden" id = "latitude <%= destination.id %>"><%= destination.latitude %></p>
-      <p class = "hidden" id = "longitude <%= destination.id %>"><%= destination.longitude %></p>
+    <!--   <p class = "hidden" id = "latitude-<%= destination.id %>"><%= destination.latitude %></p>
+      <p class = "hidden" id = "longitude-<%= destination.id %>"><%= destination.longitude %></p> -->
 
   <h3>To Do Items</h3>
 
@@ -30,7 +30,7 @@
       <% end %>
     </div>
       <%= f.hidden_field :destination_id, :value => destination.id %>
-      <%= f.submit "Add Item"%>
+      <%= f.submit "Add Item" , :onclick => 'addMarker(to-do-item.latitude,to-do-item.longitude)'%>
 
     <% end %>
 
