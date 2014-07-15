@@ -50,9 +50,7 @@ function addMarker(lat,lng) {
     map:map
 
   });
-
   return "cool_beans";
-
 }
 
 
